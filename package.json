@@ -1,0 +1,14 @@
+{
+    "name": "teamsplitter",
+    "version": "1.0.0",
+    "description": "Team splitter tool to divide people into teams",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "team"
+    ],
+    "author": "TDAK",
+    "license": "ISC"
+}

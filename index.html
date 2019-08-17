@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Team Splitter</title>
+
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link
+            rel="stylesheet"
+            href="assets/libs/font-awesome-4.7.0/css/font-awesome.min.css"
+        />
+    </head>
+
+    <body>
+        <main role="main" id="app">
+            <header>
+                <nav>
+                    <div class="logo">
+                        <h1>RANDOM</h1>
+                        <h1>TEAM</h1>
+                    </div>
+
+                    <ul>
+                        <li><a class="nav-link active" href="/">Home</a></li>
+                        <li><a class="nav-link" href="/about">About</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section role="criteria">
+                <p class="description">Assign people into random teams.</p>
+
+                <div class="team-counter-container">
+                    <p>
+                        How many teams?
+                    </p>
+
+                    <p id="team-counter">2</p>
+
+                    <div class="add-minus-container">
+                        <button class="no-border add" onclick="increment()">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </button>
+
+                        <button
+                            id="minus"
+                            class="no-border minus"
+                            onclick="decrement()"
+                        >
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="members-container">
+                    <h4>Enter members' names:</h4>
+
+                    <div class="member">
+                        <input
+                            type="text"
+                            class="member-name"
+                            value=""
+                            placeholder="Member name"
+                        />
+
+                        <button class="no-border add" onclick="addMember()">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </button>
+
+                        <button class="no-border add" disabled="true">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <p class="error"></p>
+
+                    <button class="btn btn-red action" onclick="assignTeams()">
+                        ASSIGN TEAMS
+                    </button>
+                </div>
+
+                <ul class="result hidden" id="result"></ul>
+            </section>
+        </main>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
