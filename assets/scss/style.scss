@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 13pt;
+}
+
+main[role="main"] {
+    margin: auto;
+    width: 100%;
+    max-width: 960px;
+
+    & > header {
+        padding: 15px;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            .logo {
+                display: flex;
+
+                h1 {
+                    &:first-child {
+                    }
+
+                    &:last-child {
+                        color: red;
+                        margin-left: 0.5rem;
+                    }
+                }
+            }
+
+            ul {
+                display: flex;
+                align-items: flex-end;
+                padding-bottom: 3px;
+
+                li {
+                    margin-left: 15px;
+
+                    a {
+                        font-size: 1rem;
+                        transition: 0.2s ease-in-out;
+
+                        &.active {
+                            font-weight: 700;
+                        }
+
+                        &:hover {
+                            font-weight: 700;
+                        }
+
+                        &:link,
+                        &:active,
+                        &:visited {
+                            text-decoration: none;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    section[role="criteria"] {
+        padding: 15px;
+
+        .description {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #cdcdcd;
+        }
+
+        .team-counter-container {
+            margin-top: 15px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            #team-counter {
+                box-sizing: border-box;
+                margin-left: 30px;
+                margin-right: 15px;
+                font-weight: 700;
+                font-size: 1.5rem;
+            }
+
+            button {
+                margin-left: 15px;
+                font-size: 1.1rem;
+                padding-top: 5px;
+
+                &.add {
+                    color: green;
+                }
+
+                &.minus {
+                    color: red;
+                }
+
+                &:disabled {
+                    &.minus {
+                        color: #cdcdcd;
+                    }
+                }
+            }
+        }
+
+        .members-container {
+            margin-top: 15px;
+
+            .member {
+                margin-top: 10px;
+                display: flex;
+
+                input {
+                    flex: 1;
+                    padding: 5px 10px;
+                }
+
+                button {
+                    margin-left: 15px;
+                }
+            }
+        }
+
+        .button-container {
+            p.error {
+                color: red;
+                margin-top: 10px;
+            }
+            button.action {
+                font-size: 1.2rem;
+                margin-top: 10px;
+            }
+        }
+
+        .result {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #cdcdcd;
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                box-sizing: border-box;
+                padding: 5px 10px;
+
+                h5 {
+                    color: red;
+                }
+            }
+        }
+    }
+}
+
+.btn {
+    box-sizing: border-box;
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    border: 1px solid #000;
+    border-radius: 0.25rem;
+    padding: 5px 20px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        background: #fff;
+        color: #000;
+    }
+
+    &.btn-red {
+        background: red;
+        border-color: red;
+
+        &:hover {
+            background: #000;
+            border-color: #000;
+            color: #fff;
+        }
+    }
+}
+
+button.no-border {
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+button {
+    outline: none;
+}
+
+.hidden {
+    display: none;
+}
