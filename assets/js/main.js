@@ -1,3 +1,21 @@
+/* TRACKER VIEW AND USAGE */
+// Initialize Cloud Firestore through Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyAtpIohaIMgTw3v3dAiP8uiX6YB3wb20Lk",
+    authDomain: "randomteamtool.firebaseapp.com",
+    databaseURL: "https://randomteamtool.firebaseio.com",
+    projectId: "randomteamtool",
+    storageBucket: "randomteamtool.appspot.com",
+    messagingSenderId: "1079935775041",
+    appId: "1:1079935775041:web:5c26ab6566ee1177"
+};
+firebase.initializeApp(firebaseConfig);
+
+const db = firebase.firestore();
+const firestoreIncrement = firebase.firestore.FieldValue.increment(1);
+
+_trackView();
+
 function _disableMinusButton() {
     const minusButton = document.querySelector("#minus");
     minusButton.setAttribute("disabled", true);
@@ -98,13 +116,16 @@ function assignTeams() {
     const teamCounter = _getTeamCounter();
 
     if (teamCounter > members.length) {
-        _setError("Number of teams > number of members");
+        _setError(
+            "Number of teams must be less than or equal to number of members"
+        );
         return false;
     }
 
     const result = _assignTeams(members, teamCounter);
     _setError("");
     _setResult(result);
+    _trackUsage();
 }
 
 function _getMemberNames() {
@@ -177,4 +198,14 @@ function _setResult(result) {
     });
 
     container.classList.remove("hidden");
+}
+
+function _trackView() {
+    const ref = db.collection("track").doc("track");
+    ref.update({ view: firestoreIncrement });
+}
+
+function _trackUsage() {
+    const ref = db.collection("track").doc("track");
+    ref.update({ use: firestoreIncrement });
 }
