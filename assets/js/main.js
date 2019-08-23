@@ -157,6 +157,8 @@ function getRandomInteger(min, max) {
 function _setResult(result) {
     const container = document.querySelector("#result");
 
+    container.innerHTML = "";
+
     result.forEach((r, index) => {
         const li = document.createElement("li");
 

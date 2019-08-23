@@ -4,7 +4,15 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Team Splitter</title>
+
+        <title>Beautiful Random Team Generator Tool</title>
+
+        <meta
+            name="description"
+            content="Fast, nice-looking, and website-responsive tool to random participants into teams. Just enter number of teams, enter participants, and we will do the rest."
+        />
+
+        <meta name="robots" content="index,follow" />
 
         <link rel="stylesheet" href="assets/css/style.css" />
         <link
@@ -21,16 +29,23 @@
                         <h1>RANDOM</h1>
                         <h1>TEAM</h1>
                     </div>
-
-                    <ul>
-                        <li><a class="nav-link active" href="/">Home</a></li>
-                        <li><a class="nav-link" href="/about">About</a></li>
-                    </ul>
                 </nav>
             </header>
 
             <section role="criteria">
-                <p class="description">Assign people into random teams.</p>
+                <div class="description">
+                    <p>
+                        Imagine you are playing games where you want to
+                        <strong>randomly divide</strong> your friends into teams
+                        and play against each other. This tool will help you do
+                        that in just clicks of buttons!
+                    </p>
+
+                    <p>
+                        Just enter number of teams, enter participants and we
+                        will do the rest!
+                    </p>
+                </div>
 
                 <div class="team-counter-container">
                     <p>
@@ -55,14 +70,14 @@
                 </div>
 
                 <div class="members-container">
-                    <h4>Enter members' names:</h4>
+                    <h4>Enter participants' names:</h4>
 
                     <div class="member">
                         <input
                             type="text"
                             class="member-name"
                             value=""
-                            placeholder="Member name"
+                            placeholder="Enter participant name"
                         />
 
                         <button class="no-border add" onclick="addMember()">
