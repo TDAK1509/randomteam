@@ -1,6 +1,5 @@
-/assets/css
 /node_modules
-/public
+/dist
 .firebaserc
 firebase.json
 firestore.indexes.json

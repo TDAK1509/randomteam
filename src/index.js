@@ -1,3 +1,10 @@
+import "./assets/scss/style.scss";
+import fontawesome from "@fortawesome/fontawesome";
+import faFreeSolid from "@fortawesome/fontawesome-free-solid";
+
+fontawesome.library.add(faFreeSolid);
+fontawesome.dom.i2svg();
+
 /* TRACKER VIEW AND USAGE */
 // Initialize Cloud Firestore through Firebase
 const firebaseConfig = {
@@ -14,8 +21,15 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const firestoreIncrement = firebase.firestore.FieldValue.increment(1);
 
+/* GLOBAL CLICK EVENTS */
+window.increment = increment;
+window.decrement = decrement;
+window.assignTeams = assignTeams;
+window.addMember = addMember;
+
 _trackView();
 
+/* HELPERS */
 function _disableMinusButton() {
     const minusButton = document.querySelector("#minus");
     minusButton.setAttribute("disabled", true);
@@ -75,7 +89,8 @@ function _createInput() {
     const input = document.createElement("input");
     input.setAttribute("type", "text");
     input.classList.add("member-name");
-    input.value = "Member name";
+    input.value = "";
+    input.setAttribute("placeholder", "Participant name");
     input.addEventListener("focus", e => e.target.select());
 
     return input;
