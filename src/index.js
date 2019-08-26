@@ -1,9 +1,18 @@
-import "./assets/scss/style.scss";
-import fontawesome from "@fortawesome/fontawesome";
-import faFreeSolid from "@fortawesome/fontawesome-free-solid";
+import { addIcon, minusIcon } from "./style.js";
 
-fontawesome.library.add(faFreeSolid);
-fontawesome.dom.i2svg();
+// Init fontawesome icon
+window.addEventListener("DOMContentLoaded", function() {
+    const addIconDOM = document.querySelectorAll(".add-icon");
+    const minusIconDOM = document.querySelectorAll(".minus-icon");
+
+    addIconDOM.forEach(e => {
+        Array.from(addIcon.node).map(n => e.appendChild(n));
+    });
+
+    minusIconDOM.forEach(e => {
+        Array.from(minusIcon.node).map(n => e.appendChild(n));
+    });
+});
 
 /* TRACKER VIEW AND USAGE */
 // Initialize Cloud Firestore through Firebase
@@ -102,11 +111,8 @@ function _createAddButton() {
     button.classList.add("add");
     button.addEventListener("click", addMember);
 
-    const icon = document.createElement("i");
-    icon.classList.add("fa");
-    icon.classList.add("fa-plus");
-
-    button.appendChild(icon);
+    // Add plus icon
+    Array.from(addIcon.node).map(n => button.appendChild(n));
 
     return button;
 }
@@ -117,11 +123,8 @@ function _createRemoveButton() {
     button.classList.add("minus");
     button.addEventListener("click", removeMember);
 
-    const icon = document.createElement("i");
-    icon.classList.add("fa");
-    icon.classList.add("fa-minus");
-
-    button.appendChild(icon);
+    // Add minus icon
+    Array.from(minusIcon.node).map(n => button.appendChild(n));
 
     return button;
 }
@@ -141,6 +144,8 @@ function assignTeams() {
     _setError("");
     _setResult(result);
     _trackUsage();
+
+    document.querySelector("#result").scrollIntoView({ behavior: "smooth" });
 }
 
 function _getMemberNames() {

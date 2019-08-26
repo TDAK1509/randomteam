@@ -49,13 +49,14 @@
                     <p id="team-counter">2</p>
 
                     <div class="add-minus-container">
-                        <button class="no-border add" onclick="increment()">
-                            <i class="fa fa-plus" aria-hidden="true"></i>
-                        </button>
+                        <button
+                            class="no-border add add-icon"
+                            onclick="increment()"
+                        ></button>
 
                         <button
                             id="minus"
-                            class="no-border minus"
+                            class="no-border minus minus-icon"
                             onclick="decrement()"
                         >
                             <i class="fa fa-minus" aria-hidden="true"></i>
@@ -74,13 +75,15 @@
                             placeholder="Participant name"
                         />
 
-                        <button class="no-border add" onclick="addMember()">
-                            <i class="fa fa-plus" aria-hidden="true"></i>
-                        </button>
+                        <button
+                            class="no-border add add-icon"
+                            onclick="addMember()"
+                        ></button>
 
-                        <button class="no-border add" disabled="true">
-                            <i class="fa fa-minus" aria-hidden="true"></i>
-                        </button>
+                        <button
+                            class="no-border add minus-icon"
+                            disabled="true"
+                        ></button>
                     </div>
                 </div>
 

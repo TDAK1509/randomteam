@@ -105,8 +105,8 @@ main[role="main"] {
             }
 
             button {
-                margin-left: 15px;
-                font-size: 1.1rem;
+                margin-left: 25px;
+                font-size: 1.5rem;
                 padding-top: 5px;
 
                 &.add {
@@ -138,7 +138,8 @@ main[role="main"] {
                 }
 
                 button {
-                    margin-left: 15px;
+                    margin-left: 25px;
+                    font-size: 1.5rem;
                 }
             }
         }
@@ -201,6 +202,11 @@ main[role="main"] {
             background: #000;
             border-color: #000;
             color: #fff;
+        }
+
+        &:focus {
+            background: red;
+            border-color: red;
         }
     }
 }

@@ -1,7 +1,14 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
+    mode: "development",
+
+    entry: {
+        index: "./src/index.js"
+    },
+
     module: {
         rules: [
             {
@@ -47,6 +54,8 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css"
-        })
+        }),
+
+        new CleanWebpackPlugin()
     ]
 };
